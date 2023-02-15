@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CORETECHS Youtube Videos Downloader</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+  background: url(inkpendude-portal-storm.gif) no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+ .card {
+  color: #fff;
+  margin: 40px auto;
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+  border-radius: 15px;
+  padding: 32px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.card {  
+  max-width: 600px;
+}
+
+    h1{
+            background: linear-gradient(to left, 
+                  #ea1b1b, 
+                    #2f25ed, 
+                     #23a6d5, 
+                    #23d5ab);
+           -webkit-background-clip: text; 
+            color: transparent; 
+            background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+  </style>
+</head>
+<body class="bg-dark">
+  <div class="glass-panel">
+  <div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group"><h1>CORETECHS</h1>
+              <label class="text-weight"><b>Online Videos Link:</b></label>
+              <input type="txt" name="link" class="form-control link" required>
+            </div>
+          </div>
+        </div>
+        <form class="form-download">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="text-weight"><b>Select Video Fromate:</b></label>
+                <select class="form-control formte" required>
+                  <option selected disabled>Select Video Formate</option>
+                  <option value="mp3">Mp3</option>
+                  <option value="mp4a">144 Mp4</option>
+                  <option value="360">360 Mp4</option>
+                  <option value="480">480 Mp4</option>
+                  <option value="720">720 Mp4</option>
+                  <option value="1080">1080 Mp4</option>
+                  <option value="4k">4k Mp4</option>
+                  <option value="8k">8k Mp4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group mt-4 download-video">
+                <button class="btn btn-success btn-block click-btn-down" type="submit">Click Me</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  $(".click-btn-down").click(function(){
+      var link = $(".link").val();
+    var fromate = $(".formte").children("option:selected").val();
+    var src =""+link+"="+fromate+"";
+    downloadVideo(link,fromate);
+  });
+  function downloadVideo(link,fromate) {
+      $('.download-video').html('<iframe style="width:100%;height:60px;border:0;overflow:hidden;" scrolling="no" src="https://loader.to/api/button/?url='+link+'&f='+fromate+'"></iframe>');
+  }
+</script>
+</html>
+
